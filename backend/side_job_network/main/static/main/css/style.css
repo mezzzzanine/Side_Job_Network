@@ -2,6 +2,8 @@
 
 body {
     background-color: #000;
+    overflow: overlay;
+    font-family: Inter;
 }
 *{
     border: 0px;
@@ -10,18 +12,26 @@ body {
 h1, h2, h3, h4, h5, h6{
     font-weight: 600;
     color: #fff;
-    text-transform:uppercase
-}
-h1{
-    font-size: 60px;
-}
-h2{
-    font-size: 40px;
-}
-body{
-    font-family: Inter;
 }
 
+p{
+    color: #fff !important;
+}
+
+::-webkit-scrollbar{
+    background: transparent;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #333;
+    border-radius: 5px;
+}
+
+
+.navbar{
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(80px) !important;
+}
 
 
 /* navbar button*/
@@ -120,11 +130,13 @@ body{
 }
 
 .btn-outline-primary{
-    background-color: #333;
-    color: #fff;
+    border: #fff !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid #ddd !important;
 }
 .btn-primary{
-    background-color: aliceblue;
+    background-color: #fff;
     color: #000;
 
 }.btn:focus,.btn:active {
@@ -134,8 +146,8 @@ body{
 
 /* form */
 .form-control{
-    background-color: #333;
-    border-radius: 10px;
+    background-color: transparent;
+    border-radius: 50px;
 }
 .form-control:focus,.form-control:active {
     outline: none !important;
@@ -143,7 +155,19 @@ body{
     background-color: #333;
     color: #fff;
  }
+ .form-label{
+     color: #fff;
+ }
+ .form-check-label{
+    color: #fff;
+ }
 
+ .form-select{
+     border: #fff;
+     border: 2px !important;
+     border-radius: 50px;
+     background: transparent;
+ }
 /* text muted */
 .text-muted{
     text-transform: uppercase;

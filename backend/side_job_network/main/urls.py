@@ -7,4 +7,5 @@ urlpatterns = [
     path('about-us', views.about),
     path('support', views.support),
     path('sponsorship', views.sponsorship),
+    path('privacy-policy', views.privacy_policy),
 ]

@@ -14,4 +14,9 @@ def support(request):
 def sponsorship(request):
     return render(request, "main/sponsorship.html")
 
+def privacy_policy(request):
+    return render(request, "main/privacy_policy.html")
+
+
+
 
