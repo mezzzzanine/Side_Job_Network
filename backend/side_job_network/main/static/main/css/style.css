@@ -4,9 +4,22 @@
 body{
     background-color: black;
 }
+/* navbar */
 nav{
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(80px);
+}
+/* containers */
+.container-eng{
+    max-width: 600px;
+}
+/* text */
+h1, h2, h3, h4, h5 ,h6{
+    color: #fff;
+
+}
+p{
+    color: #fff;
 }
 /* burger animation */
 .navbar-toggler {
@@ -96,3 +109,28 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
   }
+/* links and buttons */
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover{
+    color: #bfbfbf;
+}
+.footer-link{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-link:hover{
+    color: #bfbfbb;
+}
+/* placeholders */
+/* margins and deviders*/
+.mt-manual-10{
+    margin-top: 100px;
+}
+.mt-manual-50{
+    margin-top: 500px;
+}
+.devider{
+    color: #fff;
+}

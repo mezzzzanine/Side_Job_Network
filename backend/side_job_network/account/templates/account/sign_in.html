@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}Sign in{% endblock %}
+
+
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10 bg-black">
+    <h1>Sign in</h1>
+    <hr class="devider">
+</div>
+{% endblock %}
+
+
+<!-- main -->
+{% block main %}
+<section class="text-center">
+	<div class="container container-eng bg-black text-white mt-5">
+	  <div class="py-5 px-md-5">
+		<div class="row d-flex justify-content-center">
+		  <div class="col-lg-8">
+			<form>
+			  <!-- Email input -->
+			  <div class="form-outline mb-3">
+				<input type="email" class="form-control" />
+				<label class="form-label">Email address</label>
+			  </div>
+  
+			  <!-- Password input -->
+			  <div class="form-outline mb-3">
+				<input type="password" class="form-control" />
+				<label class="form-label">Password</label>
+			  </div>
+			  <!-- Don't have account? -->
+			  <p>Don't have an account? <a href="/account/sign-up">Register here</a></p>
+			  <!-- Submit button -->
+			  <button type="button" class="btn btn-light">Sign in</button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</section>
+{% endblock %}

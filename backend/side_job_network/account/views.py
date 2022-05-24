@@ -10,3 +10,10 @@ def settings(request):
     return render(request, "account/settings.html")
 
 
+def signin(request):
+    return render(request, "account/sign_in.html")
+
+
+def signup(request):
+    return render(request, "account/sign_up.html")
+
