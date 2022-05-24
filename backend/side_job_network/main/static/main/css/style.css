@@ -1,40 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body {
-    background-color: #000;
-    overflow: overlay;
-    font-family: Inter;
+/* body */
+body{
+    background-color: black;
 }
-*{
-    border: 0px;
+nav{
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(80px);
 }
-
-h1, h2, h3, h4, h5, h6{
-    font-weight: 600;
-    color: #fff;
-}
-
-p{
-    color: #fff !important;
-}
-
-::-webkit-scrollbar{
-    background: transparent;
-    width: 10px;
-}
-::-webkit-scrollbar-thumb{
-    background: #333;
-    border-radius: 5px;
-}
-
-
-.navbar{
-    background: rgba(0, 0, 0, 0.7) !important;
-    backdrop-filter: blur(80px) !important;
-}
-
-
-/* navbar button*/
+/* burger animation */
 .navbar-toggler {
     width: 20px;
     height: 20px;
@@ -60,10 +34,10 @@ p{
 .toggler-icon {
     display: block;
     position: absolute;
-    height: 3px;
+    height: 1px;
     width: 100%;
     background: #fff;
-    border-radius: 1px;
+    border-radius: 10px;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -122,67 +96,3 @@ p{
     background-position: center;
     background-repeat: no-repeat;
   }
-
-/* button */
-.btn{
-    border-radius: 50px;
-    border: 0px;
-}
-
-.btn-outline-primary{
-    border: #fff !important;
-    background-color: transparent !important;
-    color: #fff !important;
-    border: 2px solid #ddd !important;
-}
-.btn-primary{
-    background-color: #fff;
-    color: #000;
-
-}.btn:focus,.btn:active {
-    outline: none !important;
-    box-shadow: none;
- }
-
-/* form */
-.form-control{
-    background-color: transparent;
-    border-radius: 50px;
-}
-.form-control:focus,.form-control:active {
-    outline: none !important;
-    box-shadow: none;
-    background-color: #333;
-    color: #fff;
- }
- .form-label{
-     color: #fff;
- }
- .form-check-label{
-    color: #fff;
- }
-
- .form-select{
-     border: #fff;
-     border: 2px !important;
-     border-radius: 50px;
-     background: transparent;
- }
-/* text muted */
-.text-muted{
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-/* card */
-.card-body{
-    padding-left: 0px;
-    padding-top: 10px;
-}
-.card{
-    border: 0px;
-    transition-duration: 0.2S;
-}
-.card:hover .card-img-top{
-    opacity: 0.5;
-}
