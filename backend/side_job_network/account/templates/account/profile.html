@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}Profile{% endblock %}
+
+
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10 bg-black">
+    <h1>Profile</h1>
+    <hr class="devider">
+</div>
+{% endblock %}
+
+
+<!-- main -->
+{% block main %}
+<div class="container mt-5">
+    <div class="align-items-center text-center">
+        <img src="https://wide-w.com/wp-content/uploads/2021/09/31.jpg" class="rounded-circle avatar" alt="Avatar" />
+        <h1>Mezzanine</h1>
+        <h4 class="text-muted">Kazakhstan</h4>
+        <p>Rating: 8,5 👍</p>
+    </div>
+    <h2 class="mt-5">Vacancies from this user</h2>
+  <div class="album py-5 bg-black">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for el in vacancies %}
+        <div class="col">
+        <div class="card bg-black">
+          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
+          <div class="card-body">
+            <small class="text-muted">{{ el.publication_time }}</small>
+            <h6>{{ el.title }}</h6>
+            <h6>{{ el.minimum_salary }}-{{ el.maximum_salary }}<h6>
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

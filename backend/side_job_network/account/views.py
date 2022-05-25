@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Vacancy
 
 
 def profile(request):
-    return render(request, "account/profile.html")
+    vacancies = Vacancy.objects.all()
+    return render(request, "account/profile.html", { "vacancies":vacancies })
 
 
 def settings(request):
@@ -17,3 +19,6 @@ def signin(request):
 def signup(request):
     return render(request, "account/sign_up.html")
 
+
+def myprofile(request):
+    return render(request, "account/my_profile.html")

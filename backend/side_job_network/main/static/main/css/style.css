@@ -3,6 +3,7 @@
 /* body */
 body{
     background-color: black;
+    font-family: Inter;
 }
 /* navbar */
 nav{
@@ -16,10 +17,12 @@ nav{
 /* text */
 h1, h2, h3, h4, h5 ,h6{
     color: #fff;
-
 }
 p{
     color: #fff;
+}
+.text-muted{
+    color: #474747 !important;
 }
 /* burger animation */
 .navbar-toggler {
@@ -133,4 +136,9 @@ p{
 }
 .devider{
     color: #fff;
+}
+/* аvatar */
+.avatar{
+    width: 15%;
+    height: 15%;
 }
