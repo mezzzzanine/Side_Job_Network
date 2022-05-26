@@ -22,48 +22,29 @@
         <h1>Mezzanine</h1>
         <h4 class="text-muted">Kazakhstan</h4>
         <p>Rating: 8,5 👍</p>
+        <a href="/sponsorship">
+          <button type="button" class="btn btn-outline-light">Edit profile</button>
+        </a>
     </div>
-    <a href="/sponsorship">
-      <button type="button" class="btn btn-outline-light">Edit profile</button>
-    </a>
-    <h2 class="mt-5">Your vacancies</h2>
-    <a href="/sponsorship">
-      <button type="button" class="btn btn-primary btn-light">+ Add new vacancy</button>
-    </a>
-  <div class="album py-5 bg-black">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago • 231 views</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
+    <h2 class="mt-5">My vacancies</h2>
+    <div class="album py-5 bg-black">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for el in vacancies %}
+          <div class="col">
+          <div class="card bg-black">
+            <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="card-img-top rounded-0" alt="...">
+            <div class="card-body">
+              <small class="text-muted">{{ el.publication_time }}</small>
+              <h6>{{ el.title }}</h6>
+              <h6>{{ el.minimum_salary }}-{{ el.maximum_salary }}<h6>
+            </div>
           </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
+      <a href="/account/create">
+        <button type="button" class="btn btn-primary btn-light">Create new vacancy</button>
+      </a>
 </div>
 {% endblock %}

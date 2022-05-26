@@ -18,44 +18,28 @@
   <div style="width: 100%; height: 50px;"></div>
   <!-- form -->
   <div class="form-group">
-    <input class="form-control border-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Find job">
+    <input class="form-control border-0" placeholder="Find job">
   </div>
   <!-- devider -->
   <div style="width: 100%; height: 50px;"></div>
   
   <div class="album py-5 bg-black">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago • 231 views</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
-          </div>
+        {% for el in vacancies %}
+        <div class="col">
+          <a href="{% url 'vacancy-detail' el.id %}">
+            <div class="card bg-black">
+              <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                <small class="text-muted">{{ el.publication_time }}</small>
+                <h6>{{ el.title }}</h6>
+                <h6>{{ el.minimum_salary }}-{{ el.maximum_salary }}<h6>
+              </div>
+            </div>
+          </a>
+        </a>
         </div>
-      </div>
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-black">
-          <img src="{% static 'images\banner.jpg' %}" class="card-img-top rounded-0" alt="...">
-          <div class="card-body">
-            <small class="text-muted">2 days ago</small>
-            <h6>BARISTA</h6>
-            <h6>100000-300000₸<h6>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
       </div>
     </div>
-  </div>	
 {% endblock %}

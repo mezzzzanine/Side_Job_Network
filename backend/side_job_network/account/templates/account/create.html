@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}Create vacancy{% endblock %}
+
+
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10 bg-black">
+    <h1>Create vacancy</h1>
+    <hr class="devider">
+</div>
+{% endblock %}
+
+
+<!-- main -->
+{% block main %}
+<div class="container container-eng">
+    <form method="post">
+        {% csrf_token %}<br>
+        {{ form.title}}<br>
+        {{ form.minimum_salary}}<br>
+        {{ form.maximum_salary}}<br>
+        {{ form.description}}<br>
+        {{ form.publication_time}}<br>
+        <button class="btn btn-light" type="submit">Publish</button>
+    </form>
+</div>
+{% endblock %}

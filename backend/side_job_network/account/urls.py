@@ -1,3 +1,4 @@
+from venv import create
 from xml.etree.ElementInclude import include
 from django.urls import path
 from . import views
@@ -9,4 +10,5 @@ urlpatterns = [
     path('sign-up', views.signup, name='sign_in'),
     path('profile', views.profile, name='profile'),
     path('my-profile', views.myprofile, name='profile'),
+    path('create', views.create, name='create'),
 ]

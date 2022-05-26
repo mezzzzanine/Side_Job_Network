@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}{{ vacancy.title }}{% endblock %}
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10 bg-black">
+  <h1 class="text-white">Vacancy</h1>
+  <hr class="devider">
+</div>
+{% endblock %}
+<!-- main -->
+{% block main %}
+<div class="container">
+    <!-- carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- title -->
+      <h1>{{ vacancy.title }}</h1>
+      <h2>{{ vacancy.minimum_salary }}-{{ vacancy.maximum_salary }}</h2>
+      <p>{{ vacancy.publication_time }}</p>
+      <p>{{ vacancy.description }}</p>
+</div>
+{% endblock %}
