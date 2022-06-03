@@ -17,14 +17,21 @@
 <!-- main -->
 {% block main %}
 <div class="container container-eng">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}<br>
+        <div class="image-drop mt-5 mb-5">
+            {{ form.image }}<br>
+        </div>
         {{ form.title}}<br>
         {{ form.minimum_salary}}<br>
         {{ form.maximum_salary}}<br>
+        {{ form.currency}}<br>
+        {{ form.country}}<br>
+        {{ form.city}}<br>
+        {{ form.owner}}<br>
         {{ form.description}}<br>
-        {{ form.publication_time}}<br>
-        <button class="btn btn-light" type="submit">Publish</button>
+        {{ form.requirements}}<br>
+        <button class="btn btn-light mt-5" type="submit">Publish</button>
     </form>
 </div>
 {% endblock %}

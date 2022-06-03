@@ -116,6 +116,10 @@ p{
 a{
     color: #ebebf0;
 }
+.element-link{
+    text-decoration: none;
+}
+
 a:hover{
     color: #fff;
 }
@@ -132,7 +136,6 @@ a:hover{
 .footer-link:hover{
     color: #bfbfbb;
 }
-/* placeholders */
 /* margins and deviders*/
 .mt-manual-10{
     margin-top: 100px;
@@ -149,12 +152,41 @@ a:hover{
     height: 15%;
 }
 /* input */
+.form-control:focus {
+    box-shadow: none!important;
+    border-color: #000!important;
+}
+
 input{
     background-color: #2c2c2e !important;
     border: 0px !important;
     color: #fff !important;
+
 }textarea{
     background-color: #2c2c2e !important;
     border: 0px !important;
     color: #fff !important;
+}
+
+/* card */
+.card-body{
+    padding-left: 0px;
+}
+/* pagination */
+.pagination > li > a
+{   
+    border: 0px;
+    background-color: #000;
+    color: #474747;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #fff;
+    background-color: #000;
+    box-shadow: none!important;
+    border-color: #000!important;
 }

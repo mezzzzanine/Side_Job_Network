@@ -29,18 +29,37 @@
     <h2 class="mt-5">My vacancies</h2>
     <div class="album py-5 bg-black">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          {% for el in vacancies %}
-          <div class="col">
-          <div class="card bg-black">
-            <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="card-img-top rounded-0" alt="...">
-            <div class="card-body">
-              <small class="text-muted">{{ el.publication_time }}</small>
-              <h6>{{ el.title }}</h6>
-              <h6>{{ el.minimum_salary }}-{{ el.maximum_salary }}<h6>
+        {% for el in vacancies %}
+        <div class="col">
+          <a href="{% url 'vacancy-detail' el.id %}" class="element-link">
+            <div class="card bg-black">
+              {% if el.image %}
+                <img src="{{ el.image.url }}" class="card-img-top rounded-0" alt="...">
+              {% else %}
+                <h1>Image кердык</h1>
+              {% endif %}
+
+              <div class="card-body">
+                <small class="text-muted">{{ el.publication_time }}</small>
+                <h5>{{ el.title }}</h5>
+                <h5>
+                    {% if el.minimum_salary %}
+                      from
+                    {% endif %}
+                    {{ el.minimum_salary }}
+
+                    {% if el.maximum_salary %}
+                      to
+                    {% endif %}
+                    {{ el.maximum_salary }}
+                    {{ el.currency }}
+                  <h5>
+              </div>
             </div>
-          </div>
-          </div>
-          {% endfor %}
+          </a>
+        </a>
+        </div>
+        {% endfor %}
         </div>
       </div>
       <a href="/account/create">

@@ -25,15 +25,31 @@
   
   <div class="album py-5 bg-black">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for el in vacancies %}
+        {% for el in page_obj %}
         <div class="col">
-          <a href="{% url 'vacancy-detail' el.id %}">
+          <a href="{% url 'vacancy-detail' el.id %}" class="element-link">
             <div class="card bg-black">
-              <img src="http://risovach.ru/upload/2021/03/mem/betmen_267122917_orig_.jpg" class="card-img-top rounded-0" alt="...">
+              {% if el.image %}
+                <img src="{{ el.image.url }}" class="card-img-top rounded-0" alt="...">
+              {% else %}
+                <h1>Image кирдык 😵</h1>
+              {% endif %}
+
               <div class="card-body">
-                <small class="text-muted">{{ el.publication_time }}</small>
-                <h6>{{ el.title }}</h6>
-                <h6>{{ el.minimum_salary }}-{{ el.maximum_salary }}<h6>
+                <h5>{{ el.title }}</h5>
+                <h6>
+                    {% if el.minimum_salary %}
+                      from
+                    {% endif %}
+                    {{ el.minimum_salary }}
+
+                    {% if el.maximum_salary %}
+                      to
+                    {% endif %}
+                    {{ el.maximum_salary }}
+                    {{ el.currency }}
+                  <h6>
+                  <p>{{ el.publication_time }}</p>
               </div>
             </div>
           </a>
@@ -42,4 +58,25 @@
         {% endfor %}
       </div>
     </div>
+    <!-- pagiantion -->
+    
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <i class="bi bi-arrow-left-circle"></i>
+          </a>
+        </li>
+        {% for p in page_obj.paginator.page_range %}
+        <li class="page-item">
+          <a class="page-link" {% if p == page_obj.number %}style="color: #fff"{% endif%} href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.paginator.num_pages}}" aria-label="Next">
+            <i class="bi bi-arrow-right-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
 {% endblock %}

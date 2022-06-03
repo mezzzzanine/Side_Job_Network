@@ -23,7 +23,7 @@ def signup(request):
 
 def create(request):
     if request.method == 'POST':
-        form = VacancyForm(request.POST)
+        form = VacancyForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/account/my-profile')

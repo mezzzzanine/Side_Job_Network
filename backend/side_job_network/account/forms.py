@@ -1,28 +1,55 @@
 from dataclasses import field
+from logging import PlaceHolder
 
 from numpy import minimum
 from .models import Vacancy
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+from django.forms import ModelForm, TextInput, Textarea, ModelChoiceField, FileInput
 
 class VacancyForm(ModelForm):
     class Meta:
         model = Vacancy
-        fields = ['title', 'minimum_salary', 'maximum_salary', 'description', 'publication_time']
+        fields = ['title', 'image', 'minimum_salary', 'maximum_salary', 'description', 'requirements' ,'country', 'city', 'currency', 'owner']
 
         widgets={
             'title':TextInput(attrs={'class':'form-control', 
-                                    'placeholder':'Title'
+                                    'placeholder':'Title',
                                     }),
-            'minimum_salary':TextInput(attrs={'class':'form-control', 
-                                    'placeholder':'Minimum salary'
+
+
+            'minimum_salary':TextInput(attrs={'class':'form-control col-md-3', 
+                                    'placeholder':'Minimum salary',
+                                    'requirment':False
                                     }),
-            'maximum_salary':TextInput(attrs={'class':'form-control',
-                                    'placeholder':'Maximum salary' 
+
+
+            'maximum_salary':TextInput(attrs={'class':'form-control col-md-3',
+                                    'placeholder':'Maximum salary',
+                                    'requirment':False 
                                     }),
+
+
             'description':Textarea(attrs={'class': 'form-control',
                                         'placeholder':'Description'
                                         }),
-            'publication_time':DateTimeInput(attrs={'class':'form-control', 
-                                                    'placeholder':'Publication time'
-                                                    })
+
+
+            'requirements':Textarea(attrs={'class': 'form-control',
+                                        'placeholder':'Requirements'
+                                        }),
+            
+
+            'currency':TextInput(attrs={'class':'form-control',
+                                        'placeholder':'Currency'}),
+
+
+            'country':TextInput(attrs={'class':'form-control',
+                                        'placeholder':'Country'}),
+
+
+            'city':TextInput(attrs={'class':'form-control',
+                                        'placeholder':'City'}),
+
+
+            'owner':TextInput(attrs={'class':'form-control',
+                                        'placeholder':'Owner'})
         }
