@@ -8,7 +8,7 @@
 <header class="masthead b-5" style="background-image: url('{% static 'main/images/about_banner.png' %}')">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
-      <div class="col-12 text-center">
+      <div class="col-12 text-start">
         <h1 class="text-white">Let's talk about Side Job Network</h1>
         <p>Side Job Network was originally created as a project for a university. This service allows you to find a side job anywhere, anytime.</p>
       </div>
@@ -18,5 +18,38 @@
 {% endblock %}
 <!-- main -->
 {% block main %}
+<div class="container mt-5">
+  <h2>History</h2>
+  <hr class="devider">
+  <h4>Early project inception (March, 2022)</h4>
+  <p>At the end of May 2022, Zholdas Kuletov suggested creating a service for finding a side job as a project for the university. 
+    About a day later, work began on the site. 
+    A layout was created in Figma and work began on the frontend.</p>
+  
+  <h2 class="mt-5">Founders</h2>
+  <hr class="devider">
+  <!-- images -->
+  <div class="album py-5 bg-black">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <!-- cards -->
+        <div class="col">
+            <div class="card bg-black">
+                <img src="{% static 'main/images/Almas.jpg' %}" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                  <p class="text-center">Almas Akzhigitov</p>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card bg-black">
+              <img src="{% static 'main/images/Zholdas.jpg' %}" class="card-img-top rounded-0" alt="...">
+            <div class="card-body">
+                <p class="text-center">Zholdas Kuletov</p>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
 
+</div>
 {% endblock %}

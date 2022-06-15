@@ -16,15 +16,15 @@ class VacancyForm(ModelForm):
                                     }),
 
 
-            'minimum_salary':TextInput(attrs={'class':'form-control col-md-3', 
+            'minimum_salary':TextInput(attrs={'class':'form-control col-sm-6', 
                                     'placeholder':'Minimum salary',
-                                    'requirment':False
+                                    'required': False
                                     }),
 
 
-            'maximum_salary':TextInput(attrs={'class':'form-control col-md-3',
+            'maximum_salary':TextInput(attrs={'class':'form-control col-sm-6',
                                     'placeholder':'Maximum salary',
-                                    'requirment':False 
+                                    'required': False
                                     }),
 
 

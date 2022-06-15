@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load humanize %}
 
 <!-- title -->
 {% block title %}Side Job Network{% endblock %}
@@ -20,11 +21,16 @@
 {% endblock %}
 <!-- main -->
 {% block main %}
+<div class="container mt-5">
+  <h1>Recent vacancies<h1>
+
+  <hr class="devider">
+</div>
 <header class="masthead" style="background-image: url('{% static 'main/images/app_banner.png' %}')">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 text-center">
-        <h1 class="text-white">Coming oon</h1>
+        <h1 class="text-white">Coming soon...</h1>
       </div>
     </div>
   </div>

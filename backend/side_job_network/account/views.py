@@ -1,8 +1,13 @@
 from distutils.log import error
+from msilib.schema import Class
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.urls import reverse_lazy
 from .models import Vacancy
 from .forms import VacancyForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+
 
 def profile(request):
     vacancies = Vacancy.objects.all()
@@ -15,7 +20,6 @@ def settings(request):
 
 def signin(request):
     return render(request, "account/sign_in.html")
-
 
 def signup(request):
     return render(request, "account/sign_up.html")
@@ -37,3 +41,4 @@ def create(request):
 def myprofile(request):
     vacancies = Vacancy.objects.all()
     return render(request, "account/my_profile.html", { 'vacancies':vacancies })
+

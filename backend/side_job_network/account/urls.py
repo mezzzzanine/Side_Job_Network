@@ -7,8 +7,8 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('settings', views.settings, name='settings'),
     path('sign-in', views.signin, name='sign_in'),
-    path('sign-up', views.signup, name='sign_in'),
+    path('sign-up', views.signup, name='sign_up'),
     path('profile', views.profile, name='profile'),
     path('my-profile', views.myprofile, name='profile'),
-    path('create', views.create, name='create'),
+    path('create', views.create, name='create')
 ]

@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load humanize %}
 
 <!-- title -->
 {% block title %}Vacancies{% endblock %}
@@ -16,9 +17,30 @@
 <div class="container bg-black">
   <!-- devider -->
   <div style="width: 100%; height: 50px;"></div>
-  <!-- form -->
+  <!-- search -->
   <div class="form-group">
-    <input class="form-control border-0" placeholder="Find job">
+    <div class="row g-3">
+      <form action="{% url 'vacancies' %}">
+      <div class="input-group col-1">
+        <input class="form-control" placeholder="Find job" name="search">
+        <button type="submit" class="ms-1 btn btn-primary btn-light">Search</button>
+      </div>
+    </form>
+      <div class="col-md-4">
+        <select class="form-select" id="country" placeholder="Time">
+          <option>Popular</option>
+          <option>Newest</option>
+          <option>Oldest</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <select class="form-select" id="state" required="">
+          <option>Big salary</option>
+          <option>Low salary</option>
+        </select>
+      </div>
+    </div>
   </div>
   <!-- devider -->
   <div style="width: 100%; height: 50px;"></div>
@@ -30,7 +52,9 @@
           <a href="{% url 'vacancy-detail' el.id %}" class="element-link">
             <div class="card bg-black">
               {% if el.image %}
-                <img src="{{ el.image.url }}" class="card-img-top rounded-0" alt="...">
+                <div class="crop">
+                  <img src="{{ el.image.url }}" class="card-img-top rounded-0" alt="...">
+                </div> 
               {% else %}
                 <h1>Image кирдык 😵</h1>
               {% endif %}
@@ -49,7 +73,7 @@
                     {{ el.maximum_salary }}
                     {{ el.currency }}
                   <h6>
-                  <p>{{ el.publication_time }}</p>
+                  <p>{{ el.publication_time|naturaltime }}</p>
               </div>
             </div>
           </a>
@@ -59,12 +83,12 @@
       </div>
     </div>
     <!-- pagiantion -->
-    
+    {% if page_obj.paginator.count > 20 %}
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item">
           <a class="page-link" href="?page=1" aria-label="Previous">
-            <i class="bi bi-arrow-left-circle"></i>
+            <i class="bi bi-arrow-left"></i>
           </a>
         </li>
         {% for p in page_obj.paginator.page_range %}
@@ -74,9 +98,10 @@
         {% endfor %}
         <li class="page-item">
           <a class="page-link" href="?page={{ page_obj.paginator.num_pages}}" aria-label="Next">
-            <i class="bi bi-arrow-right-circle"></i>
+            <i class="bi bi-arrow-right"></i>
           </a>
         </li>
       </ul>
     </nav>
+    {% endif %}
 {% endblock %}

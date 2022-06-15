@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +56,6 @@
           </div>
         </div>
       </nav>
-  
       <!-- header -->
         {% block header %}{% endblock %}
       <!-- main part -->
@@ -63,24 +64,61 @@
       <div class="container bg-black">
       <footer class="py-5">
         <div class="row">
-          <div class="col-2">
+          <!-- Column 1 -->
+          <div class="col-6 col-lg-2 mb-3">
           <h5>Support</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="/faq" class="footer-link p-0">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="/about-us" class="footer-link p-0">About</a></li>
+            <li class="nav-item mb-2"><a href="/support" class="footer-link p-0">Support</a></li>
           </ul>
+          
         </div>
-  
+        <!-- Column 2 -->
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>About</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/about-us" class="footer-link p-0">About</a></li>
+            <li class="nav-item mb-2"><a href="/newsroom" class="footer-link p-0">Newsroom</a></li>
+          </ul>
+          
+        </div>
+        <!-- Column 3 -->
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Account</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/account/my-profile" class="footer-link p-0">My profile</a></li>
+          </ul>
+          
+        </div>
         <div class="col-4 offset-1">
         </div>
       </div>
       <hr class="devider">
-      <div class="d-flex justify-content-between py-4 my-4">
-        <p class="text-muted">© 2022 Zinker, Inc. All rights reserved</p>
-          <ul class="list-unstyled d-flex text-white">
-            <!-- icons will be here-->
-          </ul>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4">
+        <div class="col mb-3">
+          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+            <img src="{% static 'main/images/New_logos/tr_white_logo_mini.svg' %}" alt="" height="45">
+          </a>
+          <p class="text-muted">© 2022 Zinker Software Inc. All rights reserved</p>
         </div>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3">
+            <a href="#">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a href="#">
+              <i class="bi bi-github"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a href="#">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
       </footer>
     </div>
       <!-- JavaScript Bundle with Popper -->

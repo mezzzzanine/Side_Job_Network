@@ -13,6 +13,13 @@
 </div>
 {% endblock %}
 
+<!-- alert -->
+{% if messages %}
+  {% for message in messages %}
+	<p>{{message}}<p>
+  {% endfor %}
+{% endif %}
+
 
 <!-- main -->
 {% block main %}
@@ -22,19 +29,20 @@
 		<div class="row d-flex justify-content-center">
 		  <div class="col-lg-8">
 			<form>
+				{% csrf_token %}
 			  <!-- Email input -->
 			  <div class="form-outline mb-3">
-				<input type="email" class="form-control" placeholder="E-mail address"/>
+				<input type="username" class="form-control" name="username" placeholder="E-mail address"/>
 			  </div>
   
 			  <!-- Password input -->
 			  <div class="form-outline mb-3">
-				<input type="password" class="form-control" placeholder="Password"/>
+				<input type="password" class="form-control" name="password" placeholder="Password"/>
 			  </div>
 			  <!-- Don't have account? -->
 			  <p>Don't have an account? <a href="/account/sign-up">Register here</a></p>
 			  <!-- Submit button -->
-			  <button type="button" class="btn btn-light">Sign in</button>
+			  <button type="submit" value="Submit" class="btn btn-light">Sign in</button>
 			  <p class="mt-3">Or sign in with a social network</p>
 			  <hr class="devider">
 			  <button type="button" class="btn btn-light mt-3"><i class="bi bi-google m-1"></i>Continue with Google</button>
