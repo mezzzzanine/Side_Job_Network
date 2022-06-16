@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}Support{% endblock %}
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10">
     <h1>Support</h1>
-</body>
-</html>
+      <hr class="devider">
+  </div>
+{% endblock %}
+<!-- main -->
+{% block main %}
+<div class="container mt-5">
+  <h2>Contact us</h2>
+  <hr class="devider">
+  <a href="#">+7(777)-308-44-45</a><br>
+  <a href="#">sjn-mail@gmail.com</a>
+</div>
+{% endblock %}
