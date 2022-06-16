@@ -8,10 +8,60 @@
     <div class="container mt-manual-10">
         <h1>Newsroom</h1>
         <hr class="devider">
-        
     </div>
 {% endblock %}
 <!-- main -->
 {% block main %}
-
+<!-- cardholeder -->
+<div class="container bg-black">
+    <!-- devider -->
+    <div style="width: 100%; height: 50px;"></div>
+    <div class="album py-5 bg-black">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for el in page_obj %}
+          <div class="col">
+            <a href="{% url 'newsroom-detail' el.id %}" class="element-link">
+              <div class="card bg-black">
+                {% if el.image %}
+                  <div class="crop">
+                    <img src="{{ el.image.url }}" class="card-img-top rounded-0" alt="...">
+                  </div> 
+                {% else %}
+                  <h1>Image кирдык 😵</h1>
+                {% endif %}
+  
+                <div class="card-body">
+                    <p class="text-muted">{{ el.type }}</p>
+                    <h5>{{ el.title }}</h5>
+                    <p>{{ el.publication_time }}</p>
+                </div>
+              </div>
+            </a>
+          </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- pagiantion -->
+      {% if page_obj.paginator.count > 20 %}
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="Previous">
+              <i class="bi bi-arrow-left"></i>
+            </a>
+          </li>
+          {% for p in page_obj.paginator.page_range %}
+          <li class="page-item">
+            <a class="page-link" {% if p == page_obj.number %}style="color: #fff"{% endif%} href="?page={{ p }}">{{ p }}</a>
+          </li>
+          {% endfor %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages}}" aria-label="Next">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      {% endif %}
 {% endblock %}

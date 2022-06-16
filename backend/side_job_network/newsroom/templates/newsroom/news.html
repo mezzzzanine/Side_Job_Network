@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- title -->
+{% block title %}{{ news.title }}{% endblock %}
+<!-- header -->
+{% block header %}
+<div class="container mt-manual-10 bg-black">
+  <h1 class="text-white">News</h1>
+  <hr class="devider">
+</div>
+{% endblock %}
+<!-- main -->
+{% block main %}
+<div class="container">
+<!-- carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ news.image.url }}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <!-- title -->
+    <h1 class="mt-5 text-center">{{ news.title }}</h1>
+    <p class="text-center">{{ news.annons }}</p>
+    <p class="text-center">{{ news.text }}</p>
+    <p class="mt-manual-10">{{ news.publication_time }}</p>
+</div>
+{% endblock %}
